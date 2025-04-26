@@ -28,7 +28,6 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     origin: [
-      "https://chat-server-0bv1.onrender.com", // your server url
       "https://chat-client-omega-six.vercel.app", // your frontend (client) url
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
