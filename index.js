@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // Socket.io CORS configuration
 const io = socketio(server, {
   cors: {
-    origin: ["http://86312efee0b0:8080/"], // Allow both localhost and device IP
+    origin: ["http://localhost:3000", "https://chat-server-0bv1.onrender.com"], // Allow both localhost and device IP
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 5000;
 // Express CORS configuration
 app.use(
   cors({
-    origin: ["http://86312efee0b0:8080/"], // Allow both localhost and device IP
+    origin: ["https://chat-server-0bv1.onrender.com"], // Allow both localhost and device IP
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
