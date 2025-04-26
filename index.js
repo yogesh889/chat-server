@@ -12,20 +12,20 @@ const server = http.createServer(app);
 // Socket.io CORS configuration
 const io = socketio(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://d1e38278c5e9:8080/"], // Allow both localhost and device IP
+    origin: ["http://86312efee0b0:8080/"], // Allow both localhost and device IP
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
   },
 });
 
-const HOSTNAME = process.env.HOSTNAME || "127.0.0.1"; // Default to '127.0.0.1' if HOSTNAME is not defined
+// const HOSTNAME = process.env.HOSTNAME || "127.0.0.1"; // Default to '127.0.0.1' if HOSTNAME is not defined
 const PORT = process.env.PORT || 5000;
 
 // Express CORS configuration
 app.use(
   cors({
-    origin: ["http://d1e38278c5e9:8080/"], // Allow both localhost and device IP
+    origin: ["http://86312efee0b0:8080/"], // Allow both localhost and device IP
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
