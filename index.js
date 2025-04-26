@@ -14,8 +14,7 @@ const io = socketio(server, {
   cors: {
     origin: [
       "https://chat-client-omega-six.vercel.app", // allow client to connect sockets
-      "https://chat-server-0bv1.onrender.com",
-    ], 
+    ],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
