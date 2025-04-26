@@ -12,7 +12,7 @@ const server = http.createServer(app);
 // Socket.io CORS configuration
 const io = socketio(server, {
   cors: {
-    origin: ["http://localhost:3000", "http://8a450cec372a:8080/"], // Allow both localhost and device IP
+    origin: ["http://localhost:3000", "http://d1e38278c5e9:8080/"], // Allow both localhost and device IP
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
     credentials: true,
@@ -25,7 +25,7 @@ const PORT = process.env.PORT || 5000;
 // Express CORS configuration
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://192.168.1.2:3000"],  // Allow both localhost and device IP
+    origin: ["http://d1e38278c5e9:8080/"], // Allow both localhost and device IP
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -81,6 +81,4 @@ io.on("connect", (socket) => {
   });
 });
 
-server.listen(PORT, HOSTNAME, () =>
-  console.log(`Server is running at http://${HOSTNAME}:${PORT}`)
-);
+server.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
